@@ -18,6 +18,10 @@ RUN apt-get install -yqq wget aptitude htop vim git traceroute dnsutils curl ssh
 RUN apt-get install -y ruby
 RUN gem install sass
 
+# Install python2.7 for node-gyp
+RUN apt-get install -y python2.7
+ENV PYTHON /usr/bin/python2.7
+
 # Install NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 RUN sudo apt-get install -yq nodejs
